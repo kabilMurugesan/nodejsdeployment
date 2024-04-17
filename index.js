@@ -47,9 +47,9 @@ const mysql = require('mysql2/promise'); // Use mysql2/promise for async/await
 
 // Create a connection pool (recommended for production)
 const pool = mysql.createPool({
-    host: 'proddatabase.canqapxg01w6.ap-south-1.rds.amazonaws.com',
+    host: 'proddbtesting.canqapxg01w6.ap-south-1.rds.amazonaws.com',
     user: 'admin',
-    password: 'VKKCc0fcYCjqd9SXvCAJ',
+    password: '4FVZOm2J9rbbkOsFk16h',
     database: 'testDB',
     waitForConnections: true,
     connectionLimit: 10,
