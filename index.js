@@ -44,6 +44,10 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2/promise'); // Use mysql2/promise for async/await
+const cors = require('cors');
+
+// Allow requests from any origin (replace * with your frontend URL for production)
+app.use(cors());
 
 // Create a connection pool (recommended for production)
 const pool = mysql.createPool({
