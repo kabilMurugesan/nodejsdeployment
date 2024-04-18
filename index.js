@@ -80,6 +80,10 @@ app.get('/', async (req, res) => {
     }
 });
 
+app.get('/test', async (req, res) => {
+    res.status(200).send("working fine");
+});
+
 // Start the Express.js server
 const PORT = 4000;
 app.listen(PORT, () => {
