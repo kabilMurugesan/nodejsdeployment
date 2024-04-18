@@ -61,27 +61,23 @@ const pool = mysql.createPool({
 });
 
 // Define a route to handle GET requests to the root URL
-// app.get('/', async (req, res) => {
-//     try {
-//         // Acquire a connection from the pool
-//         const connection = await pool.getConnection();
-
-//         // Example SQL query to select all records from 'Persons' table
-//         const [rows, fields] = await connection.execute('SELECT * FROM Persons');
-
-//         // Release the connection back to the pool
-//         connection.release();
-
-//         // Send the query results as JSON response
-//         res.json(rows);
-//     } catch (error) {
-//         console.error('Error executing query: ' + error);
-//         res.status(500).send('Error fetching data from database');
-//     }
-// });
-
 app.get('/', async (req, res) => {
-    res.status(200).send("working fine");
+    try {
+        // Acquire a connection from the pool
+        const connection = await pool.getConnection();
+
+        // Example SQL query to select all records from 'Persons' table
+        const [rows, fields] = await connection.execute('SELECT * FROM Persons');
+
+        // Release the connection back to the pool
+        connection.release();
+
+        // Send the query results as JSON response
+        res.json(rows);
+    } catch (error) {
+        console.error('Error executing query: ' + error);
+        res.status(200).send("working fine");
+    }
 });
 
 // Start the Express.js server
