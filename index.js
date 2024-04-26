@@ -50,34 +50,38 @@ const cors = require('cors');
 app.use(cors());
 
 // Create a connection pool (recommended for production)
-const pool = mysql.createPool({
-    host: 'proddbtesting.canqapxg01w6.ap-south-1.rds.amazonaws.com',
-    user: 'admin',
-    password: '4FVZOm2J9rbbkOsFk16h',
-    database: 'testDB',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
+// const pool = mysql.createPool({
+//     host: 'proddbtesting.canqapxg01w6.ap-south-1.rds.amazonaws.com',
+//     user: 'admin',
+//     password: '4FVZOm2J9rbbkOsFk16h',
+//     database: 'testDB',
+//     waitForConnections: true,
+//     connectionLimit: 10,
+//     queueLimit: 0
+// });
 
-// Define a route to handle GET requests to the root URL
-app.get('/', async (req, res) => {
-    try {
-        // Acquire a connection from the pool
-        const connection = await pool.getConnection();
+// // Define a route to handle GET requests to the root URL
+// app.get('/', async (req, res) => {
+//     try {
+//         // Acquire a connection from the pool
+//         const connection = await pool.getConnection();
 
-        // Example SQL query to select all records from 'Persons' table
-        const [rows, fields] = await connection.execute('SELECT * FROM Persons');
+//         // Example SQL query to select all records from 'Persons' table
+//         const [rows, fields] = await connection.execute('SELECT * FROM Persons');
 
-        // Release the connection back to the pool
-        connection.release();
+//         // Release the connection back to the pool
+//         connection.release();
 
-        // Send the query results as JSON response
-        res.json(rows);
-    } catch (error) {
-        console.error('Error executing query: ' + error);
-        res.status(200).send("working fine");
-    }
+//         // Send the query results as JSON response
+//         res.json(rows);
+//     } catch (error) {
+//         console.error('Error executing query: ' + error);
+//         res.status(200).send("working fine");
+//     }
+// });
+
+app.get('/', function (req, res) {
+    res.send('Hello World!');
 });
 
 // Start the Express.js server
