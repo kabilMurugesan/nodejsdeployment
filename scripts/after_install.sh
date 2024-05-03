@@ -1,4 +1,4 @@
-mkdir /home/ubuntu/nodejsdeployment
-cd /home/ubuntu/nodejsdeployment
+mkdir /home/ubuntu/nodejs
+cd /home/ubuntu/nodejs
 
 sudo npm install

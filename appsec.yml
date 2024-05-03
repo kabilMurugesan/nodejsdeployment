@@ -1,6 +1,6 @@
 files:
   - source: /
-    destination: /var/www/nodejsdeployment
+    destination: /var/www/nodejs
 file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
