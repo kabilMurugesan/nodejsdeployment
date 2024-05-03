@@ -1,2 +1,2 @@
-#!/bin/bash
-echo installed
+# #!/bin/bash
+# echo installed
