@@ -1,4 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/nodejs
-pm2 delete server
+cd /var/www/nodejs/
 sudo pm2 start index.js

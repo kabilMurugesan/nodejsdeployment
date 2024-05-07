@@ -1,4 +1,2 @@
-# #!/bin/bash
-cd /home/ubuntu/nodejs
-
-npm install
+#!/bin/bash
+echo installed
