@@ -17,4 +17,6 @@ artifacts:
   files:
     - appspec.yml
     - script/
+    - node_modules/
     - '**/*'
+
