@@ -127,7 +127,7 @@ async function startServer() {
         pool = await sql.connect(config);
         console.log('Database is connected');
 
-        const PORT = process.env.PORT || 4000;
+        const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
         });
@@ -140,7 +140,7 @@ async function startServer() {
 app.get('/', async (req, res) => {
     try {
         const result = await pool.request().query('SELECT * FROM users');
-        res.json(result.recordset,"workingbroooooooo....................");
+        res.json(result.recordset);
     } catch (err) {
         console.error('Query execution error:', err);
         res.status(500).send('Failed to fetch data');
