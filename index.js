@@ -140,7 +140,7 @@ async function startServer() {
 app.get('/', async (req, res) => {
     try {
         const result = await pool.request().query('SELECT * FROM users');
-        res.json(result.recordset);
+        res.json(result.recordset,"workingbroooooooo....................");
     } catch (err) {
         console.error('Query execution error:', err);
         res.status(500).send('Failed to fetch data');
